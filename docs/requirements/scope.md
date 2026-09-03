@@ -48,7 +48,6 @@ La operación se maneja hoy con comandas en papel, llamados verbales a la cocina
 
 ![Diagrama de Contexto C4 - LA BRASA VIVA](../uml/DiagramaDContexto.png)
 
-**Enlace editable:** _(pegar link del equipo)_
 
 - **Actores:** Cliente, Mesero, Parrillero/Cocina y Administrador.
 - **Sistemas externos:** pasarela de pagos (autoriza el pago), facturación electrónica DIAN (emite la factura) y servicio de notificaciones (avisa al cliente).
