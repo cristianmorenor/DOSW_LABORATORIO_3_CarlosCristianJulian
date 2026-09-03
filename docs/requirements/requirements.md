@@ -4,10 +4,10 @@
 |---|---|
 | **Nombre del proyecto** | LA BRASA VIVA — Plataforma de gestión para restaurante tipo parrilla |
 | **Asignatura** | Desarrollo y Operaciones de Software (DOSW) |
-| **Entrega** | Laboratorio 3 — Parte 3 |
+| **Entrega** | Laboratorio 3 — Partes 3 y 4 |
 | **Equipo** | Carlos Sanches · Cristian Moreno · Julian Morales |
 | **Concepto** | Parrilla |
-| **Versión** | 1.0 |
+| **Versión** | 1.1 |
 | **Fecha** | 03/09/2026 |
 
 Ver el alcance del sistema y el diagrama de contexto en [`scope.md`](./scope.md).
@@ -90,25 +90,25 @@ Ver el alcance del sistema y el diagrama de contexto en [`scope.md`](./scope.md)
 
 **FLUJO BÁSICO**
 
-| Paso | Actor | Descripción | Excepciones |
-|---|---|---|---|
-| 1 | Cliente / Mesero | Consulta la carta y selecciona un plato disponible. | 1A |
-| 2 | Sistema | Valida que todos los ingredientes del plato estén disponibles. | 2A |
-| 3 | Sistema | Solicita el término de cocción si el plato es un corte a la parrilla. | — |
-| 4 | Cliente / Mesero | Selecciona el término de cocción e indica la cantidad. | 4A |
-| 5 | Cliente / Mesero | Confirma la adición del ítem al pedido. | 5A |
-| 6 | Sistema | Agrega el ítem, congela su precio actual y recalcula el total de la cuenta. | 6A |
-| 7 | Sistema | Muestra el pedido actualizado con el detalle de los ítems y el total. | — |
+| Paso | Actor | Descripción | Excepciones | Pantalla |
+|---|---|---|---|---|
+| 1 | Cliente / Mesero | Consulta la carta y selecciona un plato disponible. | 1A | P1, P2 |
+| 2 | Sistema | Valida que todos los ingredientes del plato estén disponibles. | 2A | P2 |
+| 3 | Sistema | Solicita el término de cocción si el plato es un corte a la parrilla. | — | P3 |
+| 4 | Cliente / Mesero | Selecciona el término de cocción e indica la cantidad. | 4A | P3 |
+| 5 | Cliente / Mesero | Confirma la adición del ítem al pedido. | 5A | P3 |
+| 6 | Sistema | Agrega el ítem, congela su precio actual y recalcula el total de la cuenta. | 6A | P5 |
+| 7 | Sistema | Muestra el pedido actualizado con el detalle de los ítems y el total. | — | P5, P6 |
 
 **FLUJO ALTERNO**
 
-| Paso | Actor | Descripción | Excepciones |
-|---|---|---|---|
-| 1A | Sistema | El plato está desactivado en la carta: no se muestra como seleccionable. | — |
-| 2A | Sistema | Un ingrediente está agotado: marca el plato como no disponible, lo muestra en gris e impide agregarlo (RN-02). | — |
-| 4A | Sistema | El usuario no selecciona el término de cocción de un corte: no permite continuar y muestra el mensaje de campo obligatorio (RN-P01). | — |
-| 5A | Sistema | El pedido ya pasó a `EN_PREPARACION`: rechaza el cambio e informa que la cocina ya lo tomó (RN-01). | — |
-| 6A | Sistema | El precio del plato cambió en la carta: el ítem conserva el precio congelado en el momento de la adición (RN-04). | — |
+| Paso | Actor | Descripción | Excepciones | Pantalla |
+|---|---|---|---|---|
+| 1A | Sistema | El plato está desactivado en la carta: no se muestra como seleccionable. | — | P2 |
+| 2A | Sistema | Un ingrediente está agotado: marca el plato como no disponible, lo muestra en gris e impide agregarlo (RN-02). | — | P2 |
+| 4A | Sistema | El usuario no selecciona el término de cocción de un corte: no permite continuar y muestra el mensaje de campo obligatorio (RN-P01). | — | P4 |
+| 5A | Sistema | El pedido ya pasó a `EN_PREPARACION`: rechaza el cambio e informa que la cocina ya lo tomó (RN-01). | — | P5 |
+| 6A | Sistema | El precio del plato cambió en la carta: el ítem conserva el precio congelado en el momento de la adición (RN-04). | — | P5 |
 
 **REGLAS DE NEGOCIO**
 
@@ -121,11 +121,32 @@ Ver el alcance del sistema y el diagrama de contexto en [`scope.md`](./scope.md)
 
 **ANEXOS**
 
+*Diagrama de casos de uso*
+
 ![Caso de uso RF-03](../uml/CasoUsoRF3.png)
 
-- Prototipos: _(pendiente — se agregan en la Parte 4)_
+*Prototipos — mockups del RF-03 (Parte 4)*
 
-**Notas y comentarios:** el término de cocción se solicita en la misma pantalla de selección del plato, no en una pantalla adicional, para no comprometer el requerimiento de máximo 4 pantallas (RNF-05).
+Este es el requerimiento seleccionado para el diseño de mockups. Se eligió por su claridad, por la cantidad de elementos visuales que requiere (formularios, tarjetas seleccionables, contadores y tablas) y porque su flujo básico tiene 7 pasos, muy por encima del mínimo de 3 exigido.
+
+| Pantalla | Paso del flujo | Imagen |
+|---|---|---|
+| P1 — Bienvenida y apertura de mesa | 1 | [`mockup-p1-bienvenida.jpeg`](../images/mockup-p1-bienvenida.jpeg) |
+| P2 — Carta con disponibilidad | 1, 2 y flujos 1A, 2A | [`mockup-p2-carta.jpeg`](../images/mockup-p2-carta.jpeg) |
+| P3 — Detalle del plato y término de cocción | 3, 4, 5 | [`mockup-p3-detalle.jpeg`](../images/mockup-p3-detalle.jpeg) |
+| P4 — Validación del término obligatorio | Flujo alterno 4A | [`mockup-p4-validacion.jpeg`](../images/mockup-p4-validacion.jpeg) |
+| P5 — Mi pedido | 6, 7 | [`mockup-p5-pedido.jpeg`](../images/mockup-p5-pedido.jpeg) |
+| P6 — Pedido confirmado | 7 | [`mockup-p6-confirmado.jpeg`](../images/mockup-p6-confirmado.jpeg) |
+
+*Flujo de navegación entre pantallas*
+
+![Flujo de navegación](../images/flujo-navegacion.png)
+
+*Guía de marca aplicada*
+
+![Guía de marca](../images/paleta-tipografia.jpeg)
+
+**Notas y comentarios:** el término de cocción se solicita en la misma pantalla de selección del plato (P3), no en una pantalla adicional, para no comprometer el requerimiento de máximo 4 pantallas (RNF-05). Todos los estados del mockup se comunican con color, ícono y texto simultáneamente, y la paleta cumple el contraste mínimo de 4.5:1 exigido por RNF-07.
 
 ---
 
@@ -196,7 +217,7 @@ Ver el alcance del sistema y el diagrama de contexto en [`scope.md`](./scope.md)
 
 ![Caso de uso RF-06](../uml/CasoUsoRF6.png)
 
-- Prototipos: _(pendiente — se agregan en la Parte 4)_
+- Prototipos: no aplica en esta entrega. El requerimiento seleccionado para el diseño de mockups fue el RF-03.
 
 **Notas y comentarios:** el tablero debe reflejar un pedido nuevo en menos de 2 segundos (RNF-03), por lo que la vista se actualiza sin que el parrillero tenga que recargarla manualmente.
 
@@ -269,7 +290,7 @@ Ver el alcance del sistema y el diagrama de contexto en [`scope.md`](./scope.md)
 
 ![Caso de uso RF-09](../uml/CasoUsoRF9.png)
 
-- Prototipos: _(pendiente — se agregan en la Parte 4)_
+- Prototipos: no aplica en esta entrega. El requerimiento seleccionado para el diseño de mockups fue el RF-03.
 
 **Notas y comentarios:** el diagrama de casos de uso muestra únicamente la interacción con la pasarela de pagos. La emisión de la factura electrónica se documenta en el paso 7 del flujo básico y en su flujo alterno 7A, y corresponde al requerimiento RF-10.
 
@@ -289,7 +310,7 @@ Sí, dos:
 Sí, dos tensiones reales:
 
 - **RF-04 frente a RN-01.** El enunciado plantea modificar ítems *"con la cuenta abierta"*, pero la regla RN-01 solo lo permite mientras el pedido esté en `RECIBIDO`. Una cuenta puede seguir abierta con pedidos ya en preparación, así que las dos condiciones no son equivalentes. **Resolución:** prevalece la regla de negocio; RF-04 se redactó con la restricción a nivel de *pedido*, no de *cuenta*.
-- **RNF-05 frente a RN-P01.** El requerimiento de usabilidad exige completar el primer pedido en máximo 4 pantallas, pero la regla del concepto obliga a registrar el término de cocción de cada corte, lo que añade un paso. **Resolución:** el término se solicita dentro de la misma pantalla de selección del plato, no en una pantalla adicional.
+- **RNF-05 frente a RN-P01.** El requerimiento de usabilidad exige completar el primer pedido en máximo 4 pantallas, pero la regla del concepto obliga a registrar el término de cocción de cada corte, lo que añade un paso. **Resolución:** el término se solicita dentro de la misma pantalla de selección del plato, no en una pantalla adicional. El mockup P3 refleja esta decisión.
 
 **c) Si tuviera que dar prioridad, ¿cuáles serían los 2 más importantes para una primera iteración? Justifique.**
 
@@ -316,6 +337,7 @@ Un caso de frontera es **RF-11 (consultar el estado del pedido)**: aporta valor 
 | **DIAN** | Dirección de Impuestos y Aduanas Nacionales |
 | **UML** | Lenguaje unificado de modelado |
 | **C4** | Modelo de diagramas de arquitectura en cuatro niveles |
+| **WCAG** | Pautas de accesibilidad para el contenido web |
 
 ---
 
@@ -323,4 +345,5 @@ Un caso de frontera es **RF-11 (consultar el estado del pedido)**: aporta valor 
 
 | Elaborado por | Aprobado por | Fecha | Descripción y justificación de cambios |
 |---|---|---|---|
-| Carlos Sanches, Cristian Moreno, Julian Morales | | 03/09/2026 | Versión inicial del documento: identificación de requerimientos funcionales y no funcionales, detalle de tres requerimientos con la plantilla de análisis y respuestas al análisis crítico. |
+| Carlos Sanches, Cristian Moreno, Julian Morales | | 03/09/2026 | Versión inicial: identificación de requerimientos funcionales y no funcionales, detalle de tres requerimientos con la plantilla de análisis y respuestas al análisis crítico. |
+| Carlos Sanches, Cristian Moreno, Julian Morales | | 03/09/2026 | Versión 1.1: se agregan los mockups del RF-03, el flujo de navegación y la guía de marca de la Parte 4, y la trazabilidad entre cada paso del flujo y su pantalla. |
