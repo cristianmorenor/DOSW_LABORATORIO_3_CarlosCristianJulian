@@ -325,25 +325,3 @@ Juntos cubren de punta a punta el ciclo carta → pedido → cocina, que es exac
 Un caso de frontera es **RF-11 (consultar el estado del pedido)**: aporta valor real contra la falta de visibilidad entre salón y cocina, pero depende de que RF-06 ya funcione. Lo ubicaríamos al final de la primera iteración, no en el arranque.
 
 ---
-
-## ABREVIATURAS
-
-| Abreviatura | Significado |
-|---|---|
-| **RF** | Requerimiento funcional |
-| **RNF** | Requerimiento no funcional |
-| **RN** | Regla de negocio |
-| **MVP** | Producto mínimo viable |
-| **DIAN** | Dirección de Impuestos y Aduanas Nacionales |
-| **UML** | Lenguaje unificado de modelado |
-| **C4** | Modelo de diagramas de arquitectura en cuatro niveles |
-| **WCAG** | Pautas de accesibilidad para el contenido web |
-
----
-
-## HISTORIAL DE REVISIÓN
-
-| Elaborado por | Aprobado por | Fecha | Descripción y justificación de cambios |
-|---|---|---|---|
-| Carlos Sanches, Cristian Moreno, Julian Morales | | 03/09/2026 | Versión inicial: identificación de requerimientos funcionales y no funcionales, detalle de tres requerimientos con la plantilla de análisis y respuestas al análisis crítico. |
-| Carlos Sanches, Cristian Moreno, Julian Morales | | 03/09/2026 | Versión 1.1: se agregan los mockups del RF-03, el flujo de navegación y la guía de marca de la Parte 4, y la trazabilidad entre cada paso del flujo y su pantalla. |
