@@ -13,7 +13,7 @@ Fecha: 03/09/2026
 
 ## EPIC-01: Gestion integral del ciclo de pedidos y cocina para parrilla
 
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-1
 - Tipo de issue: Epic
 - Etiqueta: parrilla
 - Descripcion general: Digitalizar el flujo principal del restaurante desde que el cliente o mesero configura y confirma una orden con especificaciones de parrilla hasta que la cocina prepara y despacha los platos.
@@ -28,7 +28,7 @@ Fecha: 03/09/2026
 
 ## FEAT-01: Armado y personalizacion de pedidos de parrilla
 
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-2
 - Epica padre: EPIC-01
 - Etiqueta: pedido
 - Descripcion: Permite consultar la carta interactiva, seleccionar las opciones requeridas para los cortes de carne y verificar disponibilidad antes de enviar la orden.
@@ -37,7 +37,7 @@ Fecha: 03/09/2026
 
 ## FEAT-02: Gestion y despacho en tablero de cocina
 
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-3
 - Epica padre: EPIC-01
 - Etiqueta: cocina
 - Descripcion: Brinda al equipo de cocina un tablero para recibir comandas en tiempo real, controlar la capacidad de la parrilla y actualizar los estados de preparacion.
@@ -51,7 +51,7 @@ Fecha: 03/09/2026
 ## Historia de Usuario 1 (HU-01)
 
 - Titulo: Seleccion de termino de coccion para cortes de parrilla
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-2
 - Feature padre: FEAT-01
 - Etiqueta: pedido
 - Puntos de historia: Pendiente Parte 7
@@ -80,7 +80,7 @@ Entonces el corte se agrega al pedido con su termino asignado, su precio queda c
 ## Historia de Usuario 2 (HU-02)
 
 - Titulo: Bloqueo de platos con ingredientes agotados
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-3
 - Feature padre: FEAT-01
 - Etiqueta: carta
 - Puntos de historia: Pendiente Parte 7
@@ -109,7 +109,7 @@ Entonces el sistema valida la disponibilidad en tiempo real, rechaza la adicion 
 ## Historia de Usuario 3 (HU-03)
 
 - Titulo: Recepcion de comandas en tablero de cocina
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-4
 - Feature padre: FEAT-02
 - Etiqueta: cocina
 - Puntos de historia: Pendiente Parte 7
@@ -138,7 +138,7 @@ Entonces los pedidos se presentan ordenados de forma cronologica indicando el ti
 ## Historia de Usuario 4 (HU-04)
 
 - Titulo: Control de capacidad de parrilla y cambio de estado
-- ID Jira: Pendiente Parte 6
+- ID Jira: DOSW2026-5
 - Feature padre: FEAT-02
 - Etiqueta: cocina
 - Puntos de historia: Pendiente Parte 7
@@ -169,26 +169,38 @@ Entonces el sistema actualiza el estado, registra el usuario y la hora del cambi
 ## Subtareas de HU-01 (Seleccion de termino de coccion)
 
 - SUB-01: Disenar modelo de datos y DTO para termino de coccion en items de pedido. Responsable: Carlos Sanchez. Tipo: Backend.
+DOSW2026-6
 - SUB-02: Construir selector visual de termino de coccion en pantalla de detalle. Responsable: Cristian Moreno. Tipo: Frontend.
+DOSW2026-7
 - SUB-03: Implementar validacion en API para rechazar cortes sin termino de coccion. Responsable: Julian Morales. Tipo: Backend.
+DOSW2026-8
 
 ## Subtareas de HU-02 (Bloqueo de platos agotados)
 
 - SUB-04: Desarrollar consulta y endpoint de carta con filtro de disponibilidad. Responsable: Carlos Sanchez. Tipo: Backend.
+DOSW2026-9
 - SUB-05: Construir indicador visual de plato agotado en la carta digital. Responsable: Cristian Moreno. Tipo: Frontend.
+DOSW2026-10
 - SUB-06: Crear prueba unitaria que valide el bloqueo al agregar platos sin inventario. Responsable: Julian Morales. Tipo: QA.
+DOSW2026-11
 
 ## Subtareas de HU-03 (Recepcion de comandas en cocina)
 
 - SUB-07: Configurar mecanismo de actualizacion en tiempo real para recepcion de pedidos. Responsable: Carlos Sanchez. Tipo: Backend.
+DOSW2026-12
 - SUB-08: Disenar interfaz de tarjetas de comanda ordenadas por hora de llegada. Responsable: Cristian Moreno. Tipo: Frontend.
+DOSW2026-13
 - SUB-09: Implementar prueba de carga para verificar respuesta menor a 2 segundos. Responsable: Julian Morales. Tipo: QA.
+DOSW2026-14
 
 ## SUBTAREAS DE HU-04 (Control de capacidad y estados)
 
 - SUB-10: Programar logica de transicion entre estados validos del pedido. Responsable: Carlos Sanchez. Tipo: Backend.
+DOSW2026-15
 - SUB-11: Desarrollar contador de cortes activos y bloqueo de maximo 8 cortes. Responsable: Cristian Moreno. Tipo: Backend.
+DOSW2026-16
 - SUB-12: Implementar registro de auditoria con usuario y fecha en cambios de estado. Responsable: Julian Morales. Tipo: Backend.
+DOSW2026-17
 
 ---
 
