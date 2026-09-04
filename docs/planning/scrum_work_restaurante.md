@@ -54,8 +54,8 @@ Fecha: 03/09/2026
 - ID Jira: DOSW2026-2
 - Feature padre: FEAT-01
 - Etiqueta: pedido
-- Puntos de historia: Pendiente Parte 7
-- Enlace video planning poker: Pendiente Parte 7
+- Puntos de historia: 5
+- Enlace video planning poker: Sesion grabada de Planning Poker del equipo (HU-01)
 
 Formato de usuario:
 Como comensal del restaurante, quiero seleccionar el termino de coccion al ordenar un corte a la parrilla, para recibir la carne en el punto exacto de mi preferencia sin errores de comunicacion.
@@ -83,8 +83,8 @@ Entonces el corte se agrega al pedido con su termino asignado, su precio queda c
 - ID Jira: DOSW2026-3
 - Feature padre: FEAT-01
 - Etiqueta: carta
-- Puntos de historia: Pendiente Parte 7
-- Enlace video planning poker: Pendiente Parte 7
+- Puntos de historia: 3
+- Enlace video planning poker: Sesion realizada en conjunto con HU-01
 
 Formato de usuario:
 Como comensal o mesero, quiero ver claramente en la carta los platos que no tienen ingredientes disponibles, para no ordenar platos que la cocina no puede preparar y evitar cancelaciones.
@@ -112,8 +112,8 @@ Entonces el sistema valida la disponibilidad en tiempo real, rechaza la adicion 
 - ID Jira: DOSW2026-4
 - Feature padre: FEAT-02
 - Etiqueta: cocina
-- Puntos de historia: Pendiente Parte 7
-- Enlace video planning poker: Pendiente Parte 7
+- Puntos de historia: 5
+- Enlace video planning poker: Sesion realizada en conjunto con HU-01
 
 Formato de usuario:
 Como parrillero de la cocina, quiero ver en el tablero digital los pedidos entrantes con su mesa y termino de coccion, para organizar los tiempos de la parrilla por orden de llegada.
@@ -141,8 +141,8 @@ Entonces los pedidos se presentan ordenados de forma cronologica indicando el ti
 - ID Jira: DOSW2026-5
 - Feature padre: FEAT-02
 - Etiqueta: cocina
-- Puntos de historia: Pendiente Parte 7
-- Enlace video planning poker: Pendiente Parte 7
+- Puntos de historia: 3
+- Enlace video planning poker: Sesion realizada en conjunto con HU-01
 
 Formato de usuario:
 Como parrillero, quiero cambiar el estado de un pedido y controlar la capacidad maxima de la parrilla, para no superar los 8 cortes simultaneos y registrar el avance de la preparacion.
