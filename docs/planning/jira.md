@@ -96,7 +96,7 @@ Descripcion de la actividad:
 Configuracion del Sprint 1 en Jira incluyendo las historias seleccionadas para la primera iteracion con sus responsables asignados.
 
 Evidencia 8 - Sprint Backlog en Jira:
-![Captura del Sprint Backlog](../images/jira-12-sprint-backlog.png)
+![alt text](<../images/image copy 11.png>)   
 
 Justificacion de la planeacion del Sprint 1:
 Se seleccionaron las historias de prioridad Alta (HU-01 y HU-03) debido a que cubren de extremo a extremo el flujo basico de pedido en salon y recepcion en cocina, validando de forma inmediata la hipotesis central del MVP.
